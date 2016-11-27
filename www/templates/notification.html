@@ -8,7 +8,6 @@
 	              <option ng-repeat="(eid, myEvent) in myEvents" value="{{eid}}">{{events.$getRecord(eid).eventInfo.name}}</option>
 	          </select>
       	</form>    
-<!--ng-repeat="(eid, myEvent) in filterEvent(myEvents, search_model)"-->
 
         <div ng-repeat="(eid, myEvent) in filterEvent(myEvents, search_model)">
             <div ng-show="myEvent.notifications != null" class="card">

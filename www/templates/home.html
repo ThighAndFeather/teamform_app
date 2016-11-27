@@ -1,5 +1,36 @@
 <ion-view view-title="Home">
   <ion-content>
-  	<h1>Home Page</h1>
+  	<h1>Home Page!!</h1>
+    
+    <div class="card list">
+      <div class="item item-divider">
+        My events
+      </div>
+      <ion-item ng-repeat="(myEventId, myEvent) in myEvents" ng-href="#/dashboard/event/{{myEventId}}">
+          {{events.$getRecord(myEventId).eventInfo.name}} ({{myEvent.position}})
+      </ion-item>
+
+      <div ng-repeat="(eid, myEvent) in myEvents">
+          <div ng-show="myEvent.notifications != null" class="card">
+                <div class="item item-divider" ng-show="myEvent.notifications">
+                    <h3>Notification from <a href = "#/dashboard/event/{{eid}}/">{{allEvents.$getRecord(eid).eventInfo.name}}</a>
+                    </h3>
+                </div>
+                <div class="item item-text-wrap"  ng-repeat="(nid,notification) in myEvent.notifications" ng-show="myEvent.notifications != null"  >
+                    <!--<span ng-show="!notification.isRead">(Unread)</span>-->
+                    <span ng-if="!notification.isRead"><strong>{{notification.content}}</strong></span>
+                    <span ng-if="notification.isRead">{{notification.content}}</span>
+                    <button class="button button-assertive button-small" ng-show ="!notification.isRead" ng-click = "changeState(eid,nid)">
+                        <i class = "icon icon ion-checkmark-round"></i>
+                    </button>
+                </div>
+          </div>
+      </div>
+      
+
+    </div>
+
+   
+
   </ion-content>
 </ion-view>

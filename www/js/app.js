@@ -51,8 +51,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
   })
   .state('dashboard.home', {
     url: '/home',
-    templateUrl: 'templates/home.html',
-    controller: 'homeCtrl'
+    templateUrl: 'templates/event.html',
+    controller: 'eventCtrl'
   })
   .state('dashboard.event', {
     url: '/event',
