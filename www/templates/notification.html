@@ -2,7 +2,7 @@
   <ion-content ng-controller="notificationCtrl">
     <!--<h4><i class="icon ion-speakerphone"></i>Notifications</h4>-->
 		    <form name="myForm">
-            <label for="repeatSelect">Notifications filter: </label>
+            <h3>Notifications filter: </h3>
 	          <select class="btn btn-danger" name="repeatSelect" id="repeatSelect" ng-model="search_model">
 	              <option value = "all">All events</option>
 	              <option ng-repeat="(eid, myEvent) in myEvents" value="{{eid}}">{{events.$getRecord(eid).eventInfo.name}}</option>
@@ -12,7 +12,7 @@
         <div ng-repeat="(eid, myEvent) in filterEvent(myEvents, search_model)">
             <div ng-show="myEvent.notifications != null" class="card">
                   <div class="item item-divider" ng-show="myEvent.notifications">
-                      <h3>Notification from <a href = "#/dashboard/event/{{eid}}/">{{allEvents.$getRecord(eid).eventInfo.name}}</a>
+                      <h3>Notification from <a href = "#/dashboard/event/{{eid}}/">{{events.$getRecord(eid).eventInfo.name}}</a>
                       </h3>
                   </div>
                   <div class="item item-text-wrap"  ng-repeat="(nid,notification) in myEvent.notifications" ng-show="myEvent.notifications != null"  >
