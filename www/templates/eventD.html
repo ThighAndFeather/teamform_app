@@ -115,13 +115,17 @@
         </div>
         <ion-item ng-repeat="(key, name) in eventObj.tba">
             <div class="row row-center">
-                <a ng-href="#/dashboard/profile/{{name}}">
-                    {{users[name].readOnly.name}}
-                </a>
-                <button class="button button-assertive button-small"  ng-click="addToTeam(name)" ng-if="isManaging">
-                    <i class="icon ion-plus-circled"></i>
-                </button>
-                <button class="button button-balanced button-small"  ng-click="invite(name)" ng-if="(myEvent | role)=='leader' && validInvite(name)">Invite</button>
+                <div class="col">
+                    <a ng-href="#/dashboard/profile/{{name}}">
+                        {{users[name].readOnly.name}}
+                    </a>
+                </div>
+                <div style="float: right">
+                    <button class="button button-assertive button-small"  ng-click="addToTeam(name)" ng-if="isManaging">
+                        <i class="icon ion-plus-circled"></i>
+                    </button>
+                    <button class="button button-balanced button-small"  ng-click="invite(name)" ng-if="(myEvent | role)=='leader' && validInvite(name)">Invite</button>
+                </div>
             </div>
         </ion-item>
     </ion-list>

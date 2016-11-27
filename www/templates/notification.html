@@ -17,11 +17,16 @@
                   </div>
                   <div class="item item-text-wrap"  ng-repeat="(nid,notification) in myEvent.notifications" ng-show="myEvent.notifications != null"  >
                       <!--<span ng-show="!notification.isRead">(Unread)</span>-->
-                      <span ng-if="!notification.isRead"><strong>{{notification.content}}</strong></span>
-                      <span ng-if="notification.isRead">{{notification.content}}</span>
-                      <button class="button button-assertive button-small" ng-show ="!notification.isRead" ng-click = "changeState(eid,nid)">
-                          <i class = "icon icon ion-checkmark-round"></i>
-                      </button>
+                      <div class="row">
+                        <div class="col">
+                          <span ng-if="!notification.isRead"><strong>{{notification.content}}</strong></span>
+                          <span ng-if="notification.isRead">{{notification.content}}</span>
+                        </div>
+                        <div style="float: right">
+                          <button class="button button-assertive button-small" ng-show ="!notification.isRead" ng-click = "changeState(eid,nid)">
+                              <i class = "icon icon ion-checkmark-round"></i>
+                          </button>
+                        </div>
                   </div>
             </div>
         </div>
