@@ -76,7 +76,8 @@
                 </button>
             </div>
             <span ng-repeat="(tagKey, tagContent) in eventObj.teams[key].tags.SkillTags" ng-if="tagContent.value != 0">
-				<button class="button button-small" style="color:white" ng-style="{backgroundColor:tagContent.color}">{{tagKey}}</button>
+				 <button class="button button-royal button-small" ng-if="tagContent.value && tagContent.color=='red'">{{tagKey}} [{{tagContent.value}}]</button>
+                 <button class="button button-royal button-small button-outline" ng-if="tagContent.value && tagContent.color=='green'">{{tagKey}} [{{tagContent.value}}]</button>
 			</span>
         </ion-item>
     </ion-list>

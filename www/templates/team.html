@@ -86,21 +86,21 @@
             </div>
         </div>        
         <div class="item item-text-wrap">
-          <button class="button button-royal button-small">Skill</button>
+          <button class="button button-dark button-small">Skill</button>
           <span ng-repeat="(name,content) in filterSkillTags(skilltags)">
                 <!--<button class="btn btn-xs btn-default" ng-style="{backgroundColor:content.color}" ng-if="content.value">{{name}} [{{content.value}}]</button>-->
-                <button class="button button-royal button-small" ng-if="content.value && content.color=='red'">{{name}} [{{value}}]</button>
-                <button class="button button-royal button-small button-outline" ng-if="content.value && content.color=='green'">{{name}} [{{value}}]</button>
+                <button class="button button-royal button-small" ng-if="content.value && content.color=='red'">{{name}} [{{content.value}}]</button>
+                <button class="button button-royal button-small button-outline" ng-if="content.value && content.color=='green'">{{name}} [{{content.value}}]</button>
           </span>
         </div>
         <div class="item item-text-wrap">
-          <button class="button button-energized button-small">Language</button>
+          <button class="button button-dark button-small">Language</button>
           <span ng-repeat="(name,value) in filterLanguageTags(languagetags)">
               <button class="button button-energized button-small button-outline">{{name}}</button>
           </span>
         </div>
         <div class="item item-text-wrap">
-          <button class="button button-assertive button-small">Manner</button>
+          <button class="button button-dark button-small">Manner</button>
           <span ng-repeat="(name,value) in filterMannerTags(mannertags)">
               <button class="button button-assertive button-small button-outline">{{name}}</button>
           </span>
